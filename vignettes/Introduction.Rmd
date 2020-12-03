@@ -1,0 +1,85 @@
+---
+title: "Introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(metaSurvival)
+```
+
+First start with loading the example dataset.
+
+```{r}
+data(exampleData)
+attach(exampleData)
+head(exampleData)
+```
+
+Computation of summary survival with continuity correction.
+
+```{r}
+results<-msurv(Study, Time, NbRisk, Survival, confidence="Greenwood",correctionFlag = T,correctionVal = c(0.25,0.5))
+results
+```
+
+Plot the estimates summary survival
+
+```{r}
+RandomEffectSummary<- results$summary.random
+
+plot(Time, Survival, type="n", col="grey", ylim=c(0,1),xlab="Time",
+ ylab="Survival")
+ 
+for (i in unique(sort(Study))){
+lines(Time[Study==i], Survival[Study==i], type="l", col="grey")
+points(max(Time[Study==i]),
+ Survival[Study==i & Time==max(Time[Study==i])], pch=15)
+}
+
+lines(RandomEffectSummary[,1], RandomEffectSummary[,2], type="l",
+ col="red", lwd=3)
+points(RandomEffectSummary[,1], RandomEffectSummary[,3], type="l",
+ col="red", lty=3, lwd=3)
+points(RandomEffectSummary[,1], RandomEffectSummary[,4], type="l",
+ col="red", lty=3, lwd=3)
+```
+
+Computation of summary survival without continuity correction.
+
+```{r}
+results<-msurv(Study, Time, NbRisk, Survival, confidence="Greenwood",correctionFlag = F)
+results
+```
+
+Plot the estimates summary survival
+
+```{r}
+RandomEffectSummary<- results$summary.random
+
+plot(Time, Survival, type="n", col="grey", ylim=c(0,1),xlab="Time",
+ ylab="Survival")
+ 
+for (i in unique(sort(Study))){
+lines(Time[Study==i], Survival[Study==i], type="l", col="grey")
+points(max(Time[Study==i]),
+ Survival[Study==i & Time==max(Time[Study==i])], pch=15)
+}
+
+lines(RandomEffectSummary[,1], RandomEffectSummary[,2], type="l",
+ col="red", lwd=3)
+points(RandomEffectSummary[,1], RandomEffectSummary[,3], type="l",
+ col="red", lty=3, lwd=3)
+points(RandomEffectSummary[,1], RandomEffectSummary[,4], type="l",
+ col="red", lty=3, lwd=3)
+```
