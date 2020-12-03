@@ -1,0 +1,13 @@
+Package: metaSurvival
+Type: Package
+Title: Meta-analysis of a single survival curve using the multivariate methodology of DerSimonian and Laird
+Version: 0.1.0
+Date: 2020-12-04
+Author: Shubhram Pandey <shubhram.pandey@parexel.com>
+Maintainer: Shubhram Pandey <shubhram.pandey@parexel.com>
+Description: This package contains functions to assess a summary survival curve from survival probabilities and number of at-risk patients collected at various points in time in various studies, and to test the between-strata heterogeneity.
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: true
+Imports: mvtnorm, survival
+RoxygenNote: 7.1.1
