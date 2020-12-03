@@ -7,15 +7,17 @@
 #' @param n.risk A numeric vector with the number of at-risk patients in the study for each value of thr time.
 #' @param surv.rate A numeric vector with the survival rates collected per study for each value of time.
 #' @param confidence A text argument indicating the method to calculate the confidence interval of the summary survival probabilities: "Greenwood" or "MonteCarlo".
+#' @param correctionFlag A logical variable which takes into account if user wants the continuity correaction or not (By default TRUE).
 #' @param correctionVal A numeric vector for continuity correction, if you don't want to apply correction pass c(0,0).
 #'
 #' @return list
 #' @export
 #' @importFrom stats quantile
 #' @author Shubhram Pandey \email{shubhram.pandey@@PAREXEL.com}
-msurv <- function(study, time, n.risk, surv.rate, confidence, correctionVal = c(0.25,0.5))
+msurv <- function(study, time, n.risk, surv.rate, confidence,correctionFlag = TRUE, correctionVal = c(0.25,0.5))
 {
   if (length(correctionVal) != 2) stop("Variable correctionVal should be a numeric vector of length 2")
+  if (correctionFlag  & any(correctionVal <= 0)) stop("Both values of continuity correction should be greater than zero.")
   .data <- data.frame(study, time, n.risk, surv.rate)
   .data <- .data[order(study, time), ]
   study <- .data$study
@@ -44,8 +46,13 @@ msurv <- function(study, time, n.risk, surv.rate, confidence, correctionVal = c(
     CondSurv <- c(-99, surv.rate[2:length(surv.rate)]/surv.rate[1:(length(surv.rate) -
                                                                      1)])
     CondSurv[time == time.init] <- surv.rate[time == time.init]
-    ArcSineCondSurv <- asin(sqrt((n.risk * CondSurv + correctionVal[1])/(n.risk + correctionVal[2])))
-    VarArcSineCondSurv <- correctionVal[1] * (n.risk + correctionVal[2]) ^ -1
+    if (correctionFlag) {
+      ArcSineCondSurv <- asin(sqrt((n.risk * CondSurv + correctionVal[1])/(n.risk + correctionVal[2])))
+      VarArcSineCondSurv <- correctionVal[1] * (n.risk + correctionVal[2]) ^ -1
+    } else {
+      ArcSineCondSurv <- asin(sqrt((n.risk * CondSurv)/(n.risk)))
+      VarArcSineCondSurv <- 1 / n.risk
+    }
     ys <- matrix(nrow = NbStudies, ncol = NbTimes)
     for (i in 1:NbStudies) ys[i, 1:sum(study == IndiceStudies[i])] <- ArcSineCondSurv[study ==
                                                                                         IndiceStudies[i]]

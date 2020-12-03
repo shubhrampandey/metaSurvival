@@ -4,7 +4,15 @@
 \alias{msurv}
 \title{Summary survival curve from aggregated survival data of a meta-analysis}
 \usage{
-msurv(study, time, n.risk, surv.rate, confidence, correctionVal = c(0.25, 0.5))
+msurv(
+  study,
+  time,
+  n.risk,
+  surv.rate,
+  confidence,
+  correctionFlag = TRUE,
+  correctionVal = c(0.25, 0.5)
+)
 }
 \arguments{
 \item{study}{A numeric vector with the numbering of the studies included in the meta-analysis. The numbering of a study is repeated for each survival probabilities extracted from this study.}
@@ -16,6 +24,8 @@ msurv(study, time, n.risk, surv.rate, confidence, correctionVal = c(0.25, 0.5))
 \item{surv.rate}{A numeric vector with the survival rates collected per study for each value of time.}
 
 \item{confidence}{A text argument indicating the method to calculate the confidence interval of the summary survival probabilities: "Greenwood" or "MonteCarlo".}
+
+\item{correctionFlag}{A logical variable which takes into account if user wants the continuity correaction or not (By default TRUE).}
 
 \item{correctionVal}{A numeric vector for continuity correction, if you don't want to apply correction pass c(0,0).}
 }
