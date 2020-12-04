@@ -1,3 +1,4 @@
 # metaSurvival 0.1.0
 
-* Added a `NEWS.md` file to track changes to the package.
+* Added msurv as initial function to run meta analysis of multiple survival curves
+* Added exmapleData as an example data set
