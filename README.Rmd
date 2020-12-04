@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 [![CRAN status](https://www.r-pkg.org/badges/version/metaSurvival)](https://CRAN.R-project.org/package=metaSurvival)
 <!-- badges: end -->
 
-The goal of metaSurvival is to ...
+The goal of metaSurvival is to perform Meta-analysis of a single survival curve using the multivariate methodology of DerSimonian and Laird.
 
 ## Installation
 

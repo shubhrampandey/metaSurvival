@@ -16,7 +16,9 @@ status](https://travis-ci.com/shubhrampandey/metaSurvival.svg?branch=master)](ht
 status](https://www.r-pkg.org/badges/version/metaSurvival)](https://CRAN.R-project.org/package=metaSurvival)
 <!-- badges: end -->
 
-The goal of metaSurvival is to …
+The goal of metaSurvival is to perform Meta-analysis of a single
+survival curve using the multivariate methodology of DerSimonian and
+Laird.
 
 ## Installation
 
@@ -116,11 +118,11 @@ results
 #> 
 #> $median.fixed
 #>              2.5%    97.5% 
-#> 6.571189 5.969119 7.163636 
+#> 6.571189 5.966745 7.151375 
 #> 
 #> $mean.fixed
 #>              2.5%    97.5% 
-#> 12.06584 11.28009 12.76527 
+#> 12.06584 11.27968 12.73854 
 #> 
 #> $heterogeneity
 #> [1] 731.217128   2.521438  60.340098
@@ -150,11 +152,11 @@ results
 #> 
 #> $median.random
 #>              2.5%    97.5% 
-#> 5.375810 4.469860 6.676145 
+#> 5.375810 4.473091 6.737762 
 #> 
 #> $mean.random
 #>                2.5%     97.5% 
-#>  9.554813  7.764589 11.465606
+#>  9.554813  7.773609 11.516259
 ```
 
 Plot the estimates summary survival
@@ -242,11 +244,11 @@ results
 #> 
 #> $median.fixed
 #>              2.5%    97.5% 
-#> 7.176926 5.923614 8.344025 
+#> 7.176926 5.926210 8.358238 
 #> 
 #> $mean.fixed
 #>              2.5%    97.5% 
-#> 13.46370 11.45324 14.73451 
+#> 13.46370 11.45041 14.77370 
 #> 
 #> $heterogeneity
 #> [1] 219.6071244   0.7572659   0.0000000
@@ -276,11 +278,11 @@ results
 #> 
 #> $median.random
 #>              2.5%    97.5% 
-#> 6.046385 4.826019 8.540219 
+#> 6.046385 4.814462 8.517836 
 #> 
 #> $mean.random
 #>                2.5%     97.5% 
-#> 11.929471  9.190071 14.485928
+#> 11.929471  9.142181 14.454972
 ```
 
 Plot the estimates summary survival
