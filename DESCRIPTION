@@ -1,6 +1,6 @@
 Package: metaSurvival
 Type: Package
-Title: Meta-analysis of a single survival curve using the multivariate methodology of DerSimonian and Laird
+Title: Meta-Analysis Of A Single Survival Curve Using The Multivariate Methodology Of Dersimonian And Laird
 Version: 0.1.0
 Date: 2020-12-04
 Authors@R: person(given = "Shubhram", 
@@ -8,7 +8,7 @@ Authors@R: person(given = "Shubhram",
                   email = "shubhram1992@gmail.com",
                   role = c("aut", "cre"))
 Maintainer: Shubhram Pandey <shubhram1992@gmail.com>
-Description: This package contains functions to assess a summary survival curve from survival probabilities and number of at-risk patients collected at various points in time in various studies, and to test the between-strata heterogeneity.
+Description: This contains functions to assess a summary survival curve from survival probabilities and number of at-risk patients collected at various points in time in various studies, and to test the between-strata heterogeneity.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
