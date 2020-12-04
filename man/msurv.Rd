@@ -30,11 +30,22 @@ msurv(
 \item{correctionVal}{A numeric vector for continuity correction, if you don't want to apply correction pass c(0,0).}
 }
 \value{
-list
+List of fixed and random effect pooled probabilities
 }
 \description{
 Estimation of the summary survival curve from the survival rates and the numbers of at-risk individuals extracted from studies of a meta-analysis.
 }
+\examples{
+attach(exampleData)
+result <- msurv(study = Study,
+                time = Time,
+                 n.risk = NbRisk,
+                 surv.rate = Survival,
+                 confidence = "Greenwood",
+                 correctionFlag = FALSE
+                 )
+result
+}
 \author{
-Shubhram Pandey \email{shubhram.pandey@PAREXEL.com}
+Shubhram Pandey \email{shubhram1992@gmail.com}
 }

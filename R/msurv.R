@@ -10,10 +10,20 @@
 #' @param correctionFlag A logical variable which takes into account if user wants the continuity correaction or not (By default TRUE).
 #' @param correctionVal A numeric vector for continuity correction, if you don't want to apply correction pass c(0,0).
 #'
-#' @return list
+#' @return List of fixed and random effect pooled probabilities
 #' @export
 #' @importFrom stats quantile
-#' @author Shubhram Pandey \email{shubhram.pandey@@PAREXEL.com}
+#' @examples
+#' attach(exampleData)
+#' result <- msurv(study = Study,
+#'                 time = Time,
+#'                  n.risk = NbRisk,
+#'                  surv.rate = Survival,
+#'                  confidence = "Greenwood",
+#'                  correctionFlag = FALSE
+#'                  )
+#' result
+#' @author Shubhram Pandey \email{shubhram1992@@gmail.com}
 msurv <- function(study, time, n.risk, surv.rate, confidence,correctionFlag = TRUE, correctionVal = c(0.25,0.5))
 {
   if (length(correctionVal) != 2) stop("Variable correctionVal should be a numeric vector of length 2")
