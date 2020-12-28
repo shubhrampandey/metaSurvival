@@ -10,8 +10,6 @@
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub
 commit](https://img.shields.io/github/last-commit/shubhrampandey/metaSurvival)](https://github.com/shubhrampandey/metaSurvival/commit/master)
-[![Travis build
-status](https://travis-ci.com/shubhrampandey/metaSurvival.svg?branch=master)](https://travis-ci.com/shubhrampandey/metaSurvival)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/metaSurvival)](https://CRAN.R-project.org/package=metaSurvival)
 <!-- badges: end -->
