@@ -42,6 +42,10 @@ msurv <- function(study, time, n.risk, surv.rate, confidence,correctionFlag = TR
                 summary.random = NA, median.random = NA, mean.random = NA))
   }
   else {
+    pooledTime = 0
+    for(i in 1:NbTimes){
+      pooledTime[i] = round(sum(.data[time == IndiceTimes[i], ]$n.risk, na.rm = T),0)
+    }
     time.init <- min(time[time > 0])
     CondSurv <- c(-99, surv.rate[2:length(surv.rate)]/surv.rate[1:(length(surv.rate) -
                                                                      1)])
@@ -254,11 +258,11 @@ msurv <- function(study, time, n.risk, surv.rate, confidence,correctionFlag = TR
                                (SimulatedPooledSurvRE[1, ] + rep(1, 10000))/2, probs = c(0.025,
                                                                                          0.975))
     SummarySurvivalFE <- cbind(IndiceTimes, PooledSurvivalFE,
-                               CIPooledSurvivalFE)
+                               CIPooledSurvivalFE,"nRisk" = pooledTime)
     MedianSurvivalTimeFE <- c(MedianTimeFE, CIMedianTimeFE)
     MeanSurvivalTimeFE <- c(MeanTimeFE, CIMeanTimeFE)
     SummarySurvivalRE <- cbind(IndiceTimes, PooledSurvivalRE,
-                               CIPooledSurvivalRE)
+                               CIPooledSurvivalRE,"nRisk" = pooledTime)
     MedianSurvivalTimeRE <- c(MedianTimeRE, CIMedianTimeRE)
     MeanSurvivalTimeRE <- c(MeanTimeRE, CIMeanTimeRE)
     return(list(verif.data = verif.data, summary.fixed = SummarySurvivalFE,

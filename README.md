@@ -5,13 +5,24 @@
 
 <!-- badges: start -->
 
-[![lifecycle](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-green.svg)](https://www.tidyverse.org/lifecycle/#mature)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub
 commit](https://img.shields.io/github/last-commit/shubhrampandey/metaSurvival)](https://github.com/shubhrampandey/metaSurvival/commit/master)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/metaSurvival)](https://CRAN.R-project.org/package=metaSurvival)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/metaSurvival)](https://CRAN.R-project.org/package=metaSurvival)
+<!-- badges: end -->
+
+### Download stats for CRAN
+
+<!-- badges: start -->
+
+[![](http://cranlogs.r-pkg.org/badges/grand-total/metaSurvival?color=orange)](https://cran.r-project.org/package=metaSurvival)
+[![](http://cranlogs.r-pkg.org/badges/last-month/metaSurvival?color=orange)](https://cran.r-project.org/package=metaSurvival)
+[![](http://cranlogs.r-pkg.org/badges/last-week/metaSurvival?color=orange)](https://cran.r-project.org/package=metaSurvival)
 <!-- badges: end -->
 
 The goal of metaSurvival is to perform Meta-analysis of a single
@@ -116,11 +127,11 @@ results
 #> 
 #> $median.fixed
 #>              2.5%    97.5% 
-#> 6.571189 5.966745 7.151375 
+#> 6.571189 5.959476 7.137555 
 #> 
 #> $mean.fixed
 #>              2.5%    97.5% 
-#> 12.06584 11.27968 12.73854 
+#> 12.06584 11.28742 12.74679 
 #> 
 #> $heterogeneity
 #> [1] 731.217128   2.521438  60.340098
@@ -150,11 +161,11 @@ results
 #> 
 #> $median.random
 #>              2.5%    97.5% 
-#> 5.375810 4.473091 6.737762 
+#> 5.375810 4.491524 6.790295 
 #> 
 #> $mean.random
 #>                2.5%     97.5% 
-#>  9.554813  7.773609 11.516259
+#>  9.554813  7.800112 11.560362
 ```
 
 Plot the estimates summary survival
@@ -242,11 +253,11 @@ results
 #> 
 #> $median.fixed
 #>              2.5%    97.5% 
-#> 7.176926 5.926210 8.358238 
+#> 7.176926 5.930531 8.347162 
 #> 
 #> $mean.fixed
 #>              2.5%    97.5% 
-#> 13.46370 11.45041 14.77370 
+#> 13.46370 11.46631 14.72920 
 #> 
 #> $heterogeneity
 #> [1] 219.6071244   0.7572659   0.0000000
@@ -276,11 +287,11 @@ results
 #> 
 #> $median.random
 #>              2.5%    97.5% 
-#> 6.046385 4.814462 8.517836 
+#> 6.046385 4.821474 8.482457 
 #> 
 #> $mean.random
-#>                2.5%     97.5% 
-#> 11.929471  9.142181 14.454972
+#>              2.5%    97.5% 
+#> 11.92947  9.15848 14.37860
 ```
 
 Plot the estimates summary survival
