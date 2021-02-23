@@ -13,7 +13,17 @@
 #' @return list
 #' @export
 #' @importFrom stats quantile
-#' @author Shubhram Pandey \email{shubhram.pandey@@PAREXEL.com}
+#' @examples
+#' attach(exampleData)
+#' result <- msurv(study = Study,
+#'                 time = Time,
+#'                  n.risk = NbRisk,
+#'                  surv.rate = Survival,
+#'                  confidence = "Greenwood",
+#'                  correctionFlag = FALSE
+#'                  )
+#' result
+#' @author Shubhram Pandey \email{shubhram1992@@gmail.com}
 msurv <- function(study, time, n.risk, surv.rate, confidence,correctionFlag = TRUE, correctionVal = c(0.25,0.5))
 {
   if (length(correctionVal) != 2) stop("Variable correctionVal should be a numeric vector of length 2")
