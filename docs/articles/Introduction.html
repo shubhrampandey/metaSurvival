@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">metaSurvival</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.0</span>
       </span>
     </div>
 
@@ -58,8 +60,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/shubhrampandey/metaSurvival/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/shubhrampandey/metaSurvival/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -79,7 +81,7 @@
       <h1 data-toc-skip>Introduction</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/shubhrampandey/metaSurvival/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/shubhrampandey/metaSurvival/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
 
     </div>
@@ -87,12 +89,12 @@
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/shubhrampandey/metaSurvival">metaSurvival</a></span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/shubhrampandey/metaSurvival" class="external-link">metaSurvival</a></span><span class="op">)</span></code></pre></div>
 <p>First start with loading the example dataset.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/attach.html">attach</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/attach.html" class="external-link">attach</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">exampleData</span><span class="op">)</span>
 <span class="co">#&gt;   Study FirstAuthor YearPub Time Survival NbRisk Location      Design</span>
 <span class="co">#&gt; 1     1         Lai    1988    1   0.8043     46     Asia Monocentric</span>
 <span class="co">#&gt; 2     1         Lai    1988    2   0.4565     37     Asia Monocentric</span>
@@ -102,7 +104,7 @@
 <span class="co">#&gt; 6     1         Lai    1988    6   0.0870      6     Asia Monocentric</span></code></pre></div>
 <p>Computation of summary survival with continuity correction.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">results</span><span class="op">&lt;-</span><span class="fu"><a href="../reference/msurv.html">msurv</a></span><span class="op">(</span><span class="va">Study</span>, <span class="va">Time</span>, <span class="va">NbRisk</span>, <span class="va">Survival</span>, confidence<span class="op">=</span><span class="st">"Greenwood"</span>,correctionFlag <span class="op">=</span> <span class="cn">T</span>,correctionVal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0.25</span>,<span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
+<code class="sourceCode R"><span class="va">results</span><span class="op">&lt;-</span><span class="fu"><a href="../reference/msurv.html">msurv</a></span><span class="op">(</span><span class="va">Study</span>, <span class="va">Time</span>, <span class="va">NbRisk</span>, <span class="va">Survival</span>, confidence<span class="op">=</span><span class="st">"Greenwood"</span>,correctionFlag <span class="op">=</span> <span class="cn">T</span>,correctionVal <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.25</span>,<span class="fl">0.5</span><span class="op">)</span><span class="op">)</span>
 <span class="va">results</span>
 <span class="co">#&gt; $verif.data</span>
 <span class="co">#&gt;    Sstudy check</span>
@@ -156,14 +158,35 @@
 <span class="co">#&gt; [18,]          42       0.06960868            0.04863084            0.09963571</span>
 <span class="co">#&gt; [19,]          45       0.06635655            0.04527093            0.09726311</span>
 <span class="co">#&gt; [20,]          48       0.06295069            0.04180072            0.09480195</span>
+<span class="co">#&gt;       nRisk</span>
+<span class="co">#&gt;  [1,]  1806</span>
+<span class="co">#&gt;  [2,]  1674</span>
+<span class="co">#&gt;  [3,]  1467</span>
+<span class="co">#&gt;  [4,]  1265</span>
+<span class="co">#&gt;  [5,]  1122</span>
+<span class="co">#&gt;  [6,]   974</span>
+<span class="co">#&gt;  [7,]   807</span>
+<span class="co">#&gt;  [8,]   546</span>
+<span class="co">#&gt;  [9,]   368</span>
+<span class="co">#&gt; [10,]   252</span>
+<span class="co">#&gt; [11,]   187</span>
+<span class="co">#&gt; [12,]   142</span>
+<span class="co">#&gt; [13,]   100</span>
+<span class="co">#&gt; [14,]    65</span>
+<span class="co">#&gt; [15,]    37</span>
+<span class="co">#&gt; [16,]    29</span>
+<span class="co">#&gt; [17,]    12</span>
+<span class="co">#&gt; [18,]    12</span>
+<span class="co">#&gt; [19,]    10</span>
+<span class="co">#&gt; [20,]     9</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $median.fixed</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 6.571189 5.961424 7.151438 </span>
+<span class="co">#&gt; 6.571189 5.964147 7.161582 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $mean.fixed</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 12.06584 11.27863 12.75772 </span>
+<span class="co">#&gt; 12.06584 11.27785 12.74435 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $heterogeneity</span>
 <span class="co">#&gt; [1] 731.217128   2.521438  60.340098</span>
@@ -190,32 +213,53 @@
 <span class="co">#&gt; [18,]          42       0.03866701            0.02088712            0.07158177</span>
 <span class="co">#&gt; [19,]          45       0.03689963            0.01966964            0.06922256</span>
 <span class="co">#&gt; [20,]          48       0.03516081            0.01850465            0.06680927</span>
+<span class="co">#&gt;       nRisk</span>
+<span class="co">#&gt;  [1,]  1806</span>
+<span class="co">#&gt;  [2,]  1674</span>
+<span class="co">#&gt;  [3,]  1467</span>
+<span class="co">#&gt;  [4,]  1265</span>
+<span class="co">#&gt;  [5,]  1122</span>
+<span class="co">#&gt;  [6,]   974</span>
+<span class="co">#&gt;  [7,]   807</span>
+<span class="co">#&gt;  [8,]   546</span>
+<span class="co">#&gt;  [9,]   368</span>
+<span class="co">#&gt; [10,]   252</span>
+<span class="co">#&gt; [11,]   187</span>
+<span class="co">#&gt; [12,]   142</span>
+<span class="co">#&gt; [13,]   100</span>
+<span class="co">#&gt; [14,]    65</span>
+<span class="co">#&gt; [15,]    37</span>
+<span class="co">#&gt; [16,]    29</span>
+<span class="co">#&gt; [17,]    12</span>
+<span class="co">#&gt; [18,]    12</span>
+<span class="co">#&gt; [19,]    10</span>
+<span class="co">#&gt; [20,]     9</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $median.random</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 5.375810 4.501763 6.735916 </span>
+<span class="co">#&gt; 5.375810 4.485345 6.743854 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $mean.random</span>
 <span class="co">#&gt;                2.5%     97.5% </span>
-<span class="co">#&gt;  9.554813  7.794826 11.514533</span></code></pre></div>
+<span class="co">#&gt;  9.554813  7.810213 11.526490</span></code></pre></div>
 <p>Plot the estimates summary survival</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">RandomEffectSummary</span><span class="op">&lt;-</span> <span class="va">results</span><span class="op">$</span><span class="va">summary.random</span>
 
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">Survival</span>, type<span class="op">=</span><span class="st">"n"</span>, col<span class="op">=</span><span class="st">"grey"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,xlab<span class="op">=</span><span class="st">"Time"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">Survival</span>, type<span class="op">=</span><span class="st">"n"</span>, col<span class="op">=</span><span class="st">"grey"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,xlab<span class="op">=</span><span class="st">"Time"</span>,
  ylab<span class="op">=</span><span class="st">"Survival"</span><span class="op">)</span>
  
-<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">Study</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>, col<span class="op">=</span><span class="st">"grey"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>,
- <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span> <span class="op">&amp;</span> <span class="va">Time</span><span class="op">==</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">]</span>, pch<span class="op">=</span><span class="fl">15</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">Study</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>, col<span class="op">=</span><span class="st">"grey"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>,
+ <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span> <span class="op">&amp;</span> <span class="va">Time</span><span class="op">==</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">]</span>, pch<span class="op">=</span><span class="fl">15</span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lty<span class="op">=</span><span class="fl">3</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">4</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">4</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lty<span class="op">=</span><span class="fl">3</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-4-1.png" width="700"></p>
 <p>Computation of summary survival without continuity correction.</p>
@@ -274,14 +318,35 @@
 <span class="co">#&gt; [18,]          42        0.1144864            0.06665886             0.1966300</span>
 <span class="co">#&gt; [19,]          45        0.1144864            0.06665886             0.1966300</span>
 <span class="co">#&gt; [20,]          48        0.1144864            0.06665886             0.1966300</span>
+<span class="co">#&gt;       nRisk</span>
+<span class="co">#&gt;  [1,]  1806</span>
+<span class="co">#&gt;  [2,]  1674</span>
+<span class="co">#&gt;  [3,]  1467</span>
+<span class="co">#&gt;  [4,]  1265</span>
+<span class="co">#&gt;  [5,]  1122</span>
+<span class="co">#&gt;  [6,]   974</span>
+<span class="co">#&gt;  [7,]   807</span>
+<span class="co">#&gt;  [8,]   546</span>
+<span class="co">#&gt;  [9,]   368</span>
+<span class="co">#&gt; [10,]   252</span>
+<span class="co">#&gt; [11,]   187</span>
+<span class="co">#&gt; [12,]   142</span>
+<span class="co">#&gt; [13,]   100</span>
+<span class="co">#&gt; [14,]    65</span>
+<span class="co">#&gt; [15,]    37</span>
+<span class="co">#&gt; [16,]    29</span>
+<span class="co">#&gt; [17,]    12</span>
+<span class="co">#&gt; [18,]    12</span>
+<span class="co">#&gt; [19,]    10</span>
+<span class="co">#&gt; [20,]     9</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $median.fixed</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 7.176926 5.945686 8.364794 </span>
+<span class="co">#&gt; 7.176926 5.944165 8.350206 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $mean.fixed</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 13.46370 11.47604 14.74155 </span>
+<span class="co">#&gt; 13.46370 11.46646 14.75379 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $heterogeneity</span>
 <span class="co">#&gt; [1] 219.6071244   0.7572659   0.0000000</span>
@@ -308,32 +373,53 @@
 <span class="co">#&gt; [18,]          42       0.08499342            0.03811229             0.1895420</span>
 <span class="co">#&gt; [19,]          45       0.08499342            0.03811229             0.1895420</span>
 <span class="co">#&gt; [20,]          48       0.08499342            0.03811229             0.1895420</span>
+<span class="co">#&gt;       nRisk</span>
+<span class="co">#&gt;  [1,]  1806</span>
+<span class="co">#&gt;  [2,]  1674</span>
+<span class="co">#&gt;  [3,]  1467</span>
+<span class="co">#&gt;  [4,]  1265</span>
+<span class="co">#&gt;  [5,]  1122</span>
+<span class="co">#&gt;  [6,]   974</span>
+<span class="co">#&gt;  [7,]   807</span>
+<span class="co">#&gt;  [8,]   546</span>
+<span class="co">#&gt;  [9,]   368</span>
+<span class="co">#&gt; [10,]   252</span>
+<span class="co">#&gt; [11,]   187</span>
+<span class="co">#&gt; [12,]   142</span>
+<span class="co">#&gt; [13,]   100</span>
+<span class="co">#&gt; [14,]    65</span>
+<span class="co">#&gt; [15,]    37</span>
+<span class="co">#&gt; [16,]    29</span>
+<span class="co">#&gt; [17,]    12</span>
+<span class="co">#&gt; [18,]    12</span>
+<span class="co">#&gt; [19,]    10</span>
+<span class="co">#&gt; [20,]     9</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $median.random</span>
 <span class="co">#&gt;              2.5%    97.5% </span>
-<span class="co">#&gt; 6.046385 4.808173 8.493205 </span>
+<span class="co">#&gt; 6.046385 4.811424 8.470701 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $mean.random</span>
 <span class="co">#&gt;                2.5%     97.5% </span>
-<span class="co">#&gt; 11.929471  9.121979 14.448190</span></code></pre></div>
+<span class="co">#&gt; 11.929471  9.101642 14.436135</span></code></pre></div>
 <p>Plot the estimates summary survival</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">RandomEffectSummary</span><span class="op">&lt;-</span> <span class="va">results</span><span class="op">$</span><span class="va">summary.random</span>
 
-<span class="fu"><a href="https://rdrr.io/r/graphics/plot.html">plot</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">Survival</span>, type<span class="op">=</span><span class="st">"n"</span>, col<span class="op">=</span><span class="st">"grey"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,xlab<span class="op">=</span><span class="st">"Time"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">Time</span>, <span class="va">Survival</span>, type<span class="op">=</span><span class="st">"n"</span>, col<span class="op">=</span><span class="st">"grey"</span>, ylim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">1</span><span class="op">)</span>,xlab<span class="op">=</span><span class="st">"Time"</span>,
  ylab<span class="op">=</span><span class="st">"Survival"</span><span class="op">)</span>
  
-<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html">sort</a></span><span class="op">(</span><span class="va">Study</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>, col<span class="op">=</span><span class="st">"grey"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>,
- <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span> <span class="op">&amp;</span> <span class="va">Time</span><span class="op">==</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">]</span>, pch<span class="op">=</span><span class="fl">15</span><span class="op">)</span>
+<span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/sort.html" class="external-link">sort</a></span><span class="op">(</span><span class="va">Study</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">{</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>, col<span class="op">=</span><span class="st">"grey"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span>,
+ <span class="va">Survival</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span> <span class="op">&amp;</span> <span class="va">Time</span><span class="op">==</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">Time</span><span class="op">[</span><span class="va">Study</span><span class="op">==</span><span class="va">i</span><span class="op">]</span><span class="op">)</span><span class="op">]</span>, pch<span class="op">=</span><span class="fl">15</span><span class="op">)</span>
 <span class="op">}</span>
 
-<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html">lines</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/lines.html" class="external-link">lines</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">2</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">3</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lty<span class="op">=</span><span class="fl">3</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/points.html">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">4</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
+<span class="fu"><a href="https://rdrr.io/r/graphics/points.html" class="external-link">points</a></span><span class="op">(</span><span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>, <span class="va">RandomEffectSummary</span><span class="op">[</span>,<span class="fl">4</span><span class="op">]</span>, type<span class="op">=</span><span class="st">"l"</span>,
  col<span class="op">=</span><span class="st">"red"</span>, lty<span class="op">=</span><span class="fl">3</span>, lwd<span class="op">=</span><span class="fl">3</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
   </div>
@@ -347,11 +433,13 @@
 
 
       <footer><div class="copyright">
-  <p>Developed by Shubhram Pandey.</p>
+  <p></p>
+<p>Developed by Shubhram Pandey.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
 </div>
 
       </footer>
@@ -359,6 +447,8 @@
 
   
 
+
+  
 
   </body>
 </html>
